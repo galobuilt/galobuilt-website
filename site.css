@@ -109,6 +109,12 @@ img { max-width: 100%; display: block; }
 .foot { border-top: 1px solid var(--line); padding: 40px var(--sc-gutter) 96px; display: flex; flex-wrap: wrap; gap: 20px 48px; justify-content: space-between; font-size: 0.88rem; color: var(--sc-ink-soft); }
 .foot a { color: inherit; }
 .foot strong { color: var(--sc-ink); font-weight: 600; }
+/* Bigger tap areas for phone and footer links on touch screens */
+@media (pointer: coarse) {
+  .foot a, dd a[data-biz] { display: inline-block; padding: 10px 0; }
+  .foot a + br { display: none; }
+  .foot div:last-child { display: flex; flex-direction: column; align-items: flex-start; }
+}
 
 /* Estimate form, set as a work order */
 .order { border: 1px solid var(--sc-ink); background: var(--sc-surface); }
