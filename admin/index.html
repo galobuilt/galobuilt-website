@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Website editor · GALO Built</title>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --canvas: #EEEAE2; --surface: #F8F5EF; --ink: #1F1E1B; --soft: #57524A; --line: rgba(31,30,27,.16);
+    --accent: #8A5A33; --accent-ink: #FBF6EE; --dark: #1D1C19; --ok: #2F6B3F; --bad: #A33B2B;
+    --display: "Archivo", system-ui, sans-serif; --text: "Geist", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--canvas); color: var(--ink); font: 16px/1.5 var(--text); }
+  button, input, textarea { font: inherit; color: inherit; }
+  [hidden] { display: none !important; }
+  .bar { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; gap: 14px; padding: 10px 20px; background: var(--surface); border-bottom: 1px solid var(--line); }
+  .bar img { height: 38px; }
+  .bar strong { font-family: var(--display); font-stretch: 80%; letter-spacing: .06em; text-transform: uppercase; font-size: .95rem; }
+  .bar .grow { flex: 1; }
+  .bar .who { color: var(--soft); font-size: .9rem; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 10px 18px; border: 0; background: var(--accent); color: var(--accent-ink); font-weight: 600; cursor: pointer; text-decoration: none; }
+  .btn:disabled { opacity: .45; cursor: default; }
+  .btn--ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1px var(--line); }
+  .btn:focus-visible, input:focus-visible, textarea:focus-visible, .tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .login { min-height: 100dvh; display: grid; place-items: center; padding: 24px; }
+  .login form { width: min(400px, 100%); background: var(--surface); padding: 32px; display: grid; gap: 16px; box-shadow: 0 20px 40px -20px rgba(0,0,0,.25); }
+  .login img { height: 64px; justify-self: start; }
+  .login h1 { margin: 0; font-family: var(--display); font-stretch: 85%; font-size: 1.6rem; }
+  label { display: grid; gap: 6px; font-size: .9rem; font-weight: 500; }
+  input[type=email], input[type=password], input[type=text], input[type=tel], textarea { width: 100%; padding: 11px 12px; border: 1px solid var(--line); background: #fff; border-radius: 0; }
+  textarea { resize: vertical; min-height: 46px; line-height: 1.45; }
+  .err { color: var(--bad); font-size: .92rem; margin: 0; }
+
+  .app { display: grid; grid-template-columns: 220px 1fr; min-height: calc(100dvh - 59px); }
+  .tabs { border-right: 1px solid var(--line); padding: 16px 10px; display: grid; gap: 2px; align-content: start; position: sticky; top: 59px; height: calc(100dvh - 59px); }
+  .tab { all: unset; cursor: pointer; padding: 11px 14px; font-weight: 500; display: flex; justify-content: space-between; gap: 8px; }
+  .tab[aria-selected="true"] { background: var(--ink); color: var(--surface); }
+  .tab .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); align-self: center; }
+  .main { padding: 28px clamp(16px, 4vw, 48px) 120px; max-width: 920px; }
+  .main h2 { font-family: var(--display); font-stretch: 85%; font-size: 1.8rem; margin: 0 0 4px; }
+  .lead { color: var(--soft); margin: 0 0 24px; }
+  .group { border-top: 1px solid var(--ink); padding: 18px 0 8px; display: grid; gap: 14px; }
+  .group h3 { margin: 0; font-family: var(--display); font-stretch: 80%; letter-spacing: .08em; text-transform: uppercase; font-size: .78rem; color: var(--soft); }
+  .field span { color: var(--soft); font-weight: 500; font-size: .82rem; }
+  .field.changed textarea { border-color: var(--accent); box-shadow: inset 3px 0 0 var(--accent); }
+
+  .proj { border-top: 1px solid var(--ink); padding: 18px 0 26px; display: grid; gap: 12px; }
+  .proj h3 { margin: 0; font-size: 1.15rem; }
+  .thumbs { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+  .thumb { background: var(--surface); display: grid; gap: 6px; padding: 6px; position: relative; }
+  .thumb img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; background: #ddd; }
+  .thumb.gone img { opacity: .25; }
+  .thumb.new { box-shadow: inset 0 0 0 2px var(--accent); }
+  .thumb .row { display: flex; gap: 6px; flex-wrap: wrap; }
+  .thumb button { all: unset; cursor: pointer; font-size: .8rem; padding: 4px 8px; border: 1px solid var(--line); }
+  .thumb button:focus-visible { outline: 2px solid var(--accent); }
+  .badge { position: absolute; top: 12px; left: 12px; background: var(--ink); color: var(--surface); font-size: .7rem; padding: 2px 6px; letter-spacing: .06em; text-transform: uppercase; }
+  .thumb input { padding: 6px 8px; font-size: .85rem; }
+  .add { display: inline-flex; }
+
+  .save { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; display: flex; align-items: center; gap: 14px; padding: 12px 20px; background: var(--dark); color: #EEEAE2; }
+  .save .grow { flex: 1; }
+  .save .msg { font-size: .95rem; }
+  .save .msg.ok { color: #9BD3A8; } .save .msg.bad { color: #F0A897; }
+  @media (max-width: 760px) {
+    .app { grid-template-columns: 1fr; }
+    .tabs { position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--line); display: flex; overflow-x: auto; padding: 8px; }
+    .tab { white-space: nowrap; }
+    .bar .who { display: none; }
+  }
+</style>
+</head>
+<body>
+<section class="login" id="login" hidden>
+  <form id="loginForm">
+    <img src="/assets/galo/logo-badge.webp" alt="GALO Built">
+    <h1>Website editor</h1>
+    <label>Email <input type="email" name="email" autocomplete="username" required></label>
+    <label>Password <input type="password" name="password" autocomplete="current-password" required></label>
+    <p class="err" id="loginErr" role="alert"></p>
+    <button class="btn" type="submit">Log in</button>
+  </form>
+</section>
+
+<div id="appWrap" hidden>
+  <header class="bar">
+    <img src="/assets/galo/logo-badge.webp" alt="">
+    <strong>Website editor</strong>
+    <span class="grow"></span>
+    <span class="who" id="who"></span>
+    <a class="btn btn--ghost" href="/" target="_blank" rel="noopener">See the website</a>
+    <button class="btn btn--ghost" id="logout" type="button">Log out</button>
+  </header>
+  <div class="app">
+    <nav class="tabs" id="tabs" role="tablist" aria-label="Pages"></nav>
+    <main class="main" id="main"></main>
+  </div>
+  <div class="save">
+    <span class="msg" id="msg" role="status">No changes yet.</span>
+    <span class="grow"></span>
+    <button class="btn btn--ghost" id="undo" type="button" hidden>Undo all changes</button>
+    <button class="btn" id="saveBtn" type="button" disabled>Save and publish</button>
+  </div>
+</div>
+<script src="/admin/editor.js"></script>
+</body>
+</html>
