@@ -102,16 +102,18 @@
               </div>
             </fieldset>
             <div class="field field--full"><label for="f-msg">About the project</label><textarea id="f-msg" name="message" placeholder="What you want built, rough size, and when you would like to start."></textarea></div>
+            <div class="field field--full"><label for="f-budget">Approximate budget <span class="opt">(optional)</span></label><input id="f-budget" name="budget" autocomplete="off"></div>
+            <div class="field field--full"><label for="f-files">Plans or photos <span class="opt">(optional, up to 6)</span></label><input id="f-files" name="files" type="file" multiple accept="image/*,.heic,.pdf"><p class="form-note" data-files-note>Photos are made smaller before they are sent. PDF plans up to 3 MB.</p></div>
             <div class="hp" aria-hidden="true"><label>Leave empty <input name="company_site" tabindex="-1" autocomplete="off"></label></div>
           </div>
           <div class="order__foot">
-            <p class="form-note">Demo form. On the live site this goes straight to your inbox, with spam protection.</p>
+            <p class="form-note" data-form-status role="status"></p>
             <button class="btn" type="submit">Request an estimate</button>
           </div>
         </form>
         <div class="form-done" tabindex="-1">
           <h3 class="h-md">Thanks, <span data-first>there</span>.</h3>
-          <p class="body" style="margin-top:10px">This is the demo, so nothing was sent. On the live site your request lands in the GALO Built inbox and you get a reply within one business day.</p>
+          <p class="body" style="margin-top:10px">Your request came through. We will call or email you soon to talk about your project.</p>
         </div>
       </div>
   </div>

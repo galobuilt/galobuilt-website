@@ -161,3 +161,10 @@ fieldset.field { border: 0; margin: 0; min-width: 0; }
   .titleblock__proj { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .btn, .nav a, .chips span { transition: none; } }
+
+/* Estimate form: optional labels, file picker, status line */
+.opt { font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--sc-ink-soft); }
+.field input[type=file] { padding: 10px 0; font: inherit; font-size: .9rem; }
+.field input[type=file]::file-selector-button { font: inherit; font-size: .85rem; margin-right: 12px; padding: 8px 14px; border: 1px solid var(--sc-ink); background: transparent; color: var(--sc-ink); cursor: pointer; }
+[data-form-status]:empty { display: none; }
+[data-form-status].is-error { color: var(--sc-accent); }

@@ -35,18 +35,67 @@
     document.addEventListener('click', e => { if (!tb.contains(e.target)) close(); });
   }
 
-  // Estimate form: demo only, nothing is sent. Honeypot blocks simple bots.
+  // Estimate form: sends to /api/lead (Resend), which emails estimates@galobuilt.com.
+  // Spam: a hidden box bots fill in, plus the time taken to fill the form.
+  const shrink = file => new Promise(resolve => {
+    const done = blob => {
+      const r = new FileReader();
+      r.onload = () => resolve({ filename: file.name.replace(/\.(heic|png|webp)$/i, '.jpg'), content: String(r.result).split(',')[1] });
+      r.readAsDataURL(blob);
+    };
+    if (!/^image\//.test(file.type) && !/\.heic$/i.test(file.name)) {
+      const r = new FileReader();
+      r.onload = () => resolve({ filename: file.name, content: String(r.result).split(',')[1] });
+      return r.readAsDataURL(file);
+    }
+    const img = new Image();
+    img.onload = () => {
+      const k = Math.min(1, 1600 / Math.max(img.naturalWidth, img.naturalHeight));
+      const c = document.createElement('canvas');
+      c.width = Math.round(img.naturalWidth * k); c.height = Math.round(img.naturalHeight * k);
+      c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+      URL.revokeObjectURL(img.src);
+      c.toBlob(b => b ? done(b) : resolve(null), 'image/jpeg', 0.8);
+    };
+    img.onerror = () => resolve(null);
+    img.src = URL.createObjectURL(file);
+  });
+
   document.querySelectorAll('.order').forEach(order => {
     const form = order.querySelector('form');
     if (!form) return;
-    form.addEventListener('submit', e => {
+    const opened = Date.now();
+    const status = form.querySelector('[data-form-status]');
+    const btn = form.querySelector('button[type=submit]');
+    const label = btn.textContent;
+    const say = (msg, bad) => { status.textContent = msg; status.classList.toggle('is-error', !!bad); };
+    form.addEventListener('submit', async e => {
       e.preventDefault();
       if (form.querySelector('.hp input').value) return;
       if (!form.reportValidity()) return;
-      const n = form.querySelector('[name=name]').value.trim().split(' ')[0];
-      order.querySelector('[data-first]').textContent = n || 'there';
-      order.setAttribute('data-done', '');
-      order.querySelector('.form-done').focus();
+      const fd = new FormData(form);
+      const body = { _ms: Date.now() - opened, page: location.pathname };
+      for (const [k, v] of fd.entries()) {
+        if (k === 'files' || k === 'company_site') continue;
+        body[k] = body[k] ? body[k] + ', ' + v : v;
+      }
+      btn.disabled = true; btn.textContent = 'Sending...'; say('');
+      const picked = [...(form.querySelector('[name=files]')?.files || [])].slice(0, 6);
+      const files = (await Promise.all(picked.map(shrink))).filter(Boolean);
+      let size = 0;
+      body.files = files.filter(f => (size += f.content.length * 0.75) <= 3 * 1024 * 1024);
+      try {
+        const r = await fetch('/api/lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+        const j = await r.json();
+        if (!j.success) throw j;
+        const n = String(body.name || '').trim().split(' ')[0];
+        order.querySelector('[data-first]').textContent = n || 'there';
+        order.setAttribute('data-done', '');
+        order.querySelector('.form-done').focus();
+      } catch (err) {
+        btn.disabled = false; btn.textContent = label;
+        say('Sorry, that did not go through. Please call us at (949) 847-2227 or email estimates@galobuilt.com.', true);
+      }
     });
   });
 })();
