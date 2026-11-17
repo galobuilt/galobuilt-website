@@ -1,0 +1,6 @@
+node_modules/
+source-assets/
+lab/
+.DS_Store
+.env*
+.vercel/

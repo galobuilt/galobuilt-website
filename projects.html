@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Projects · Masonry and Hardscape Portfolio | GALO Built</title>
+<meta name="description" content="Selected masonry, concrete, hardscape and outdoor living projects by GALO Built in coastal Orange County.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><rect width='28' height='28' fill='%2315181A'/><path d='M3 10h22M3 18h22M14 3v7M8 10v8M20 10v8M14 18v7' stroke='%23E4E5E2' stroke-width='2'/><rect x='3' y='18' width='22' height='7' fill='%239A3F26'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="scrollcraft.css">
+<link rel="stylesheet" href="site.css">
+<style>
+  .split2 { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(32px, 6vw, 96px); align-items: start; }
+  .split2 figure { margin: 0; aspect-ratio: 4/3; overflow: hidden; } .split2 figure img { width: 100%; height: 100%; object-fit: cover; }
+  .vals { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--sc-ink); }
+  .vals > div { padding: 28px 28px 28px 0; border-bottom: 1px solid var(--line); display: grid; gap: 10px; }
+  .vals > div:nth-child(even) { padding-left: 28px; border-left: 1px solid var(--line); }
+  .trade { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 80px); align-items: center; padding: clamp(48px, 7vw, 96px) 0; border-top: 1px solid var(--line); }
+  .trade:nth-child(even) figure { order: 2; }
+  .trade figure { margin: 0; aspect-ratio: 16/11; overflow: hidden; } .trade figure img { width: 100%; height: 100%; object-fit: cover; }
+  .trade ul { margin: 6px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 20px; }
+  .trade li { padding: 8px 0; border-bottom: 1px solid var(--line); font-size: .95rem; }
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0 36px; }
+  .filters button { font: 500 .92rem var(--sc-font-text); padding: 10px 16px; border: 1px solid var(--line); background: transparent; color: var(--sc-ink); cursor: pointer; border-radius: 0; transition: background-color .14s var(--sc-ease-out); }
+  .filters button[aria-pressed="true"] { background: var(--sc-ink); color: var(--sc-surface); border-color: var(--sc-ink); }
+  .gal { display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(14px, 1.6vw, 24px); }
+  .gal figure { margin: 0; display: grid; gap: 10px; grid-column: span 4; }
+  .gal figure.w { grid-column: span 8; }
+  .gal figure[hidden] { display: none; }
+  .gal .im { overflow: hidden; aspect-ratio: 4/3; background: #cfd1cd; } .gal figure.w .im { aspect-ratio: auto; height: 100%; min-height: 280px; }
+  .gal img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--sc-ease-out); }
+  @media (hover: hover) and (pointer: fine) { .gal figure:hover img { transform: scale(1.03); } }
+  .gal figcaption { display: flex; justify-content: space-between; gap: 12px; font-size: .9rem; }
+  .gal figcaption b { font-weight: 600; }
+  .contact-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(32px, 6vw, 96px); align-items: start; }
+  .contact-grid dl { display: grid; grid-template-columns: 7rem 1fr; gap: 10px 16px; margin: 8px 0 0; font-size: .95rem; }
+  .contact-grid dt { font-family: var(--sc-font-display); font-stretch: 75%; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; font-size: .74rem; color: var(--sc-ink-soft); padding-top: 3px; }
+  .contact-grid dd { margin: 0; }
+  .band { background: var(--sc-surface); }
+  @media (max-width: 900px) {
+    .split2, .trade, .contact-grid { grid-template-columns: 1fr; } .trade:nth-child(even) figure { order: 0; }
+    .vals { grid-template-columns: 1fr; } .vals > div:nth-child(even) { padding-left: 0; border-left: 0; }
+    .gal figure, .gal figure.w { grid-column: span 12; } .gal figure.w .im { aspect-ratio: 4/3; min-height: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="sc-grain" aria-hidden="true"></div>
+<p class="demo-strip"><b>Demo for GALO Built.</b> Built with free stock photos. Your project photos and your own words go in next.</p>
+
+<header class="bar">
+  <a class="mark" href="index.html" aria-label="GALO Built home">
+    <svg viewBox="0 0 28 28" aria-hidden="true"><rect x="1" y="1" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"/><path d="M1 10h26M1 18.5h26M14 1v9M8 10v8.5M20 10v8.5" stroke="currentColor" stroke-width="2"/><rect x="2" y="19.5" width="24" height="6.5" fill="#9A3F26"/></svg>
+    <span>GALO <small>BUILT</small></span>
+  </a>
+  <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav class="nav" id="nav" aria-label="Main">
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html" aria-current="page">Projects</a>
+    <a href="contact.html">Contact</a>
+    <a class="btn" href="contact.html">Request an estimate</a>
+  </nav>
+</header>
+<main>
+<section class="page-hero" id="top-P-1" data-sheet="P-1" data-sheet-name="Projects">
+  <img src="assets/16.webp" srcset="assets/16-s.webp 900w, assets/16.webp 2000w" sizes="100vw" width="2000" height="1333" alt="Lap pool beside a modern home with a stone patio">
+  <div class="wrap"><p class="tag">Projects</p><h1 class="h-xl">The work, up close.</h1><p class="lede">Sorted by trade. Each project shows what we built and what it is made of.</p></div>
+</section>
+<section class="section" id="gallery" data-sheet="P-2" data-sheet-name="Gallery" style="padding-top:clamp(40px,5vw,64px)">
+  <div class="wrap">
+    <div class="filters" role="group" aria-label="Filter projects by trade">
+      <button aria-pressed="true" data-f="all">All</button><button aria-pressed="false" data-f="masonry">Masonry</button><button aria-pressed="false" data-f="concrete">Concrete</button><button aria-pressed="false" data-f="hardscape">Hardscape</button><button aria-pressed="false" data-f="outdoor">Outdoor living</button>
+    </div>
+    <div class="gal"><figure class="w" data-cat="hardscape"><div class="im"><img src="assets/14-s.webp" width="900" height="600" loading="lazy" alt="Modern house with pool deck and stone wall at dusk"></div><figcaption><b>Pool deck and veneer</b><span class="tag">Hardscape</span></figcaption></figure><figure class="" data-cat="masonry"><div class="im"><img src="assets/03-s.webp" width="900" height="600" loading="lazy" alt="Curved stone steps through a planted garden"></div><figcaption><b>Garden steps</b><span class="tag">Masonry</span></figcaption></figure><figure class="" data-cat="outdoor"><div class="im"><img src="assets/20-s.webp" width="900" height="600" loading="lazy" alt="Outdoor kitchen counter under a shade roof"></div><figcaption><b>Outdoor kitchen</b><span class="tag">Outdoor living</span></figcaption></figure><figure class="" data-cat="hardscape"><div class="im"><img src="assets/16-s.webp" width="900" height="600" loading="lazy" alt="Lap pool beside a stone patio"></div><figcaption><b>Lap pool patio</b><span class="tag">Hardscape</span></figcaption></figure><figure class="" data-cat="masonry"><div class="im"><img src="assets/25-s.webp" width="900" height="600" loading="lazy" alt="Paver walk beside a stacked stone wall"></div><figcaption><b>Entry walk</b><span class="tag">Masonry</span></figcaption></figure><figure class="" data-cat="outdoor"><div class="im"><img src="assets/01-s.webp" width="900" height="600" loading="lazy" alt="Stone patio with a fire table"></div><figcaption><b>Fire patio</b><span class="tag">Outdoor living</span></figcaption></figure><figure class="w" data-cat="concrete"><div class="im"><img src="assets/17-s.webp" width="900" height="600" loading="lazy" alt="Large covered patio floor beside a pool"></div><figcaption><b>Covered patio slab</b><span class="tag">Concrete</span></figcaption></figure><figure class="" data-cat="concrete"><div class="im"><img src="assets/13-s.webp" width="900" height="600" loading="lazy" alt="Pool terrace in front of a modern white house"></div><figcaption><b>Pool terrace</b><span class="tag">Concrete</span></figcaption></figure><figure class="" data-cat="hardscape"><div class="im"><img src="assets/26-s.webp" width="900" height="600" loading="lazy" alt="Small pool with stone coping and deck"></div><figcaption><b>Pool coping and deck</b><span class="tag">Hardscape</span></figcaption></figure><figure class="" data-cat="outdoor"><div class="im"><img src="assets/10-s.webp" width="900" height="600" loading="lazy" alt="Stone fireplace in a covered outdoor room"></div><figcaption><b>Fireplace room</b><span class="tag">Outdoor living</span></figcaption></figure></div>
+    <p class="body" style="margin-top:32px">Sample photos for the demo. Your own project photos replace these, and you can add new ones yourself from the site editor.</p>
+  </div>
+</section>
+<script>
+document.querySelectorAll('.filters button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.filters button').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+  document.querySelectorAll('.gal figure').forEach(f => f.hidden = b.dataset.f !== 'all' && f.dataset.cat !== b.dataset.f);
+}));
+</script>
+</main>
+<footer class="foot">
+      <div><strong>GALO Built</strong><br>Masonry, concrete and hardscape. Coastal Orange County, California.</div>
+      <div><a href="about.html">About</a> · <a href="services.html">Services</a> · <a href="projects.html">Projects</a> · <a href="contact.html">Contact</a></div>
+      <div>Demo by Solumbra. Photos: Unsplash.</div>
+    </footer>
+<div class="titleblock">
+  <span class="titleblock__sheet">A-0</span>
+  <button aria-expanded="false" aria-label="Open sheet index"><span class="titleblock__name">Page</span><span class="titleblock__proj">GALO Built · Sheet index</span></button>
+  <ul class="sheets"></ul>
+</div>
+<script src="scrollcraft.js"></script>
+<script>ScrollCraft.mount(document.body);</script>
+<script src="site.js"></script>
+</body>
+</html>

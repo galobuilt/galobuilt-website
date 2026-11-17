@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GALO Built · Masonry, Concrete and Hardscape in Orange County</title>
+<meta name="description" content="GALO Built is a masonry, concrete and hardscape contractor serving homeowners, luxury builders and general contractors across coastal Orange County. Request an estimate.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><rect width='28' height='28' fill='%2315181A'/><path d='M3 10h22M3 18h22M14 3v7M8 10v8M20 10v8M14 18v7' stroke='%23E4E5E2' stroke-width='2'/><rect x='3' y='18' width='22' height='7' fill='%239A3F26'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="scrollcraft.css">
+<link rel="stylesheet" href="site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"GALO Built","url":"https://galobuilt.com","slogan":"Built on Values","description":"Masonry, concrete and hardscape contractor for homeowners, luxury residential builders and general contractors in coastal Orange County.","areaServed":["Newport Beach","Laguna Beach","Corona del Mar","Dana Point","San Clemente","Huntington Beach","Irvine"],"address":{"@type":"PostalAddress","addressRegion":"CA","addressCountry":"US"}}
+</script>
+<style>
+  /* ---------- Sheet A-0: cover, layered ---------- */
+  .cover { background: var(--dark); }
+  .cover .sc-stage { overflow: hidden; background: var(--dark); }
+  .cover__back { position: absolute; inset: -6% 0 0 0; width: 100%; height: 106%; object-fit: cover; object-position: 50% 62%;
+    transform: translate3d(0, calc(var(--sc-p, 0) * -3vh), 0) scale(calc(1.1 - var(--sc-p, 0) * 0.07)); transform-origin: 50% 70%; will-change: transform; }
+  .cover__draft { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none;
+    transform: translate3d(0, calc(var(--sc-p, 0) * -7vh), 0); }
+  .cover__draft path, .cover__draft line { stroke: rgba(244,245,241,.78); stroke-width: 1.2; fill: none; vector-effect: non-scaling-stroke;
+    stroke-dasharray: 1; stroke-dashoffset: calc(1 - clamp(0, (var(--sc-p, 0) - 0.08) * 2.4, 1)); }
+  .cover__draft text { fill: rgba(244,245,241,.9); font: 600 13px var(--sc-font-display); font-stretch: 75%; letter-spacing: .12em;
+    opacity: clamp(0, (var(--sc-p, 0) - 0.4) * 4, 1); }
+  .cover__course { position: absolute; left: -2%; right: -2%; bottom: 0; height: 46vh;
+    background: url(assets/08.webp) 50% 40% / cover; filter: brightness(.82) contrast(1.05);
+    clip-path: polygon(0 34%, 14% 34%, 14% 17%, 33% 17%, 33% 34%, 52% 34%, 52% 17%, 71% 17%, 71% 34%, 88% 34%, 88% 17%, 100% 17%, 100% 100%, 0 100%);
+    transform: translate3d(0, calc(30vh - var(--sc-p, 0) * 22vh), 0); will-change: transform;
+    box-shadow: 0 -30px 60px rgba(0,0,0,.4); }
+  .cover__course::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.0) 20%, rgba(14,16,17,.55) 100%); }
+  .cover__copy { position: absolute; left: var(--sc-gutter); top: clamp(48px, 9vh, 110px); z-index: 3; max-width: min(720px, 86vw); display: grid; gap: 20px; color: #F4F5F1; }
+  .cover__copy .lede { color: #E6E8E3; max-width: 40ch; }
+  .cover__copy .tag { color: #DADDD8; }
+  .cover__ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+  .cover__ctas .btn--ghost { color: #F4F5F1 !important; box-shadow: inset 0 0 0 1px rgba(244,245,241,.8); }
+  .cover__ctas .btn--ghost:hover { background: rgba(244,245,241,.12); }
+  .cover__scrim { position: absolute; inset: 0; z-index: 2; pointer-events: none;
+    background: radial-gradient(120% 95% at 0% 0%, rgba(12,14,15,.86) 0%, rgba(12,14,15,.62) 40%, rgba(12,14,15,0) 70%), linear-gradient(180deg, rgba(12,14,15,.45) 0%, rgba(12,14,15,0) 22%); }
+
+  /* ---------- Sheet S-1: services ---------- */
+  .svc { padding: clamp(80px, 11vw, 150px) 0 clamp(64px, 9vw, 120px); }
+  .svc__top { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(32px, 6vw, 96px); align-items: end; margin-bottom: clamp(48px, 7vw, 88px); }
+  .svc__img { aspect-ratio: 16/10; overflow: hidden; }
+  .svc__img img { width: 100%; height: 100%; object-fit: cover; }
+  .svc__rows { border-top: 1px solid var(--sc-ink); }
+  .svc__row { display: grid; grid-template-columns: 5rem 1fr 1.3fr 12rem; gap: 24px; align-items: start; padding: 26px 0; border-bottom: 1px solid var(--line); }
+  .svc__row .tag { padding-top: 6px; }
+  .svc__row p { margin: 0; }
+  .svc__thumb { aspect-ratio: 4/3; overflow: hidden; }
+  .svc__thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--sc-ease-out); }
+  @media (hover: hover) and (pointer: fine) { .svc__row:hover .svc__thumb img { transform: scale(1.04); } }
+
+  /* ---------- Sheet S-2: who we build for (quiet, type only) ---------- */
+  .who { background: var(--sc-surface); padding: clamp(80px, 11vw, 150px) 0; }
+  .who__grid { display: grid; grid-template-columns: 1fr 2fr; gap: clamp(32px, 6vw, 96px); }
+  .who__list { display: grid; gap: 0; border-top: 1px solid var(--sc-ink); }
+  .who__item { display: grid; grid-template-columns: 1fr 1.4fr; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--line); }
+
+  /* ---------- Sheet V-1: Built on Values (peak) ---------- */
+  .values .sc-stage { display: grid; align-items: center; background: var(--dark); color: var(--bone); overflow: hidden; }
+  .values__in { display: grid; grid-template-columns: 0.9fr 1.4fr; gap: clamp(32px, 5vw, 80px); align-items: end; width: 100%; max-width: 1320px; margin: 0 auto; padding: 0 var(--sc-gutter); }
+  .values__head { display: grid; gap: 20px; align-self: center; }
+  .values__head .h-xl { color: var(--bone); }
+  .values__head .h-xl em { font-style: normal; color: var(--brick-light); }
+  .values__head .lede { color: var(--bone-soft); }
+  .site { position: relative; --k: calc((var(--sc-p, 0) - 0.06) * var(--n, 24) / 0.62); }
+  .site__plate { position: relative; aspect-ratio: 16 / 7.4; overflow: hidden; margin: 0 0 0;
+    --tp: clamp(0, (var(--sc-p, 0) - 0.7) * 5, 1);
+    opacity: var(--tp); transform: translate3d(0, calc((1 - var(--tp)) * -14vh), 0); box-shadow: 0 18px 30px -12px rgba(0,0,0,.6); }
+  .site__plate img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; }
+  .site__plate figcaption { position: absolute; left: 12px; bottom: 10px; color: #F4F5F1; background: rgba(14,16,17,.72); padding: 5px 9px; }
+  .wall { display: grid; gap: 6px; padding-top: 6px; }
+  .course { display: grid; grid-template-columns: 15rem 1fr; gap: 18px; align-items: center; }
+  .course__label { text-align: right; --tl: clamp(0, var(--k) - var(--last), 1); opacity: calc(0.18 + var(--tl) * 0.82); transform: translate3d(calc((1 - var(--tl)) * 10px), 0, 0); }
+  .course__label { margin: 0; line-height: 1.25; }
+  .course__label b { display: block; font-family: var(--sc-font-display); font-stretch: 80%; font-weight: 800; font-size: 1.05rem; white-space: nowrap; letter-spacing: .02em; text-transform: uppercase; color: var(--bone); }
+  .course__label span { white-space: nowrap; font-size: .82rem; color: var(--bone-soft); line-height: 1.4; display: block; }
+  .blocks { display: flex; gap: 6px; height: clamp(52px, 8.4vh, 84px); }
+  .blk { flex: 2 1 0; background: url(assets/08-s.webp) var(--bx, 0) var(--by, 0) / 1100% auto; border-radius: 1px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.22), inset 0 -8px 14px rgba(0,0,0,.28), 0 6px 10px -4px rgba(0,0,0,.6);
+    filter: brightness(calc(0.82 + var(--lit, 0) * 0.1));
+    --t: clamp(0, var(--k) - var(--i), 1);
+    opacity: var(--t); transform: translate3d(0, calc((1 - var(--t)) * -70px), 0) rotate(calc((1 - var(--t)) * var(--r, -3deg))); }
+  .blk--half { flex-grow: 1; }
+  .wall__base { height: 10px; background: #2B3031; margin-top: 2px; }
+
+  /* ---------- Sheet P-1: projects rail ---------- */
+  .work .sc-stage { display: flex; align-items: center; overflow: hidden; background: var(--sc-canvas); }
+  .rail { display: flex; gap: clamp(20px, 2.4vw, 36px); padding: 0 var(--sc-gutter); align-items: stretch; will-change: transform; }
+  .rail__lead { flex: 0 0 min(380px, 80vw); display: grid; align-content: center; gap: 18px; }
+  .proj { flex: 0 0 clamp(300px, 34vw, 520px); display: grid; gap: 14px; align-content: start; margin: 0; }
+  .proj__img { aspect-ratio: 4 / 3.1; overflow: hidden; background: #cfd1cd; }
+  .proj__img img { width: 100%; height: 100%; object-fit: cover; }
+  .proj h3 { font-family: var(--sc-font-display); font-stretch: 85%; font-weight: 750; font-size: 1.3rem; margin: 0; }
+  .proj dl { display: grid; grid-template-columns: 6.2rem 1fr; gap: 4px 12px; margin: 0; font-size: .9rem; }
+  .proj dt { font-family: var(--sc-font-display); font-stretch: 75%; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; font-size: .72rem; color: var(--sc-ink-soft); padding-top: 3px; }
+  .proj dd { margin: 0; color: var(--sc-ink); }
+  .rail__end { flex: 0 0 min(320px, 76vw); display: grid; align-content: center; gap: 18px; border-left: 1px solid var(--sc-ink); padding-left: 28px; }
+
+  /* ---------- Sheet M-1: method + area ---------- */
+  .method { padding: clamp(80px, 11vw, 150px) 0; }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--sc-ink); margin-top: clamp(40px, 6vw, 72px); }
+  .step { padding: 24px 24px 8px 0; display: grid; gap: 10px; align-content: start; }
+  .step + .step { padding-left: 24px; border-left: 1px solid var(--line); }
+  .step .num { font-family: var(--sc-font-display); font-weight: 800; font-stretch: 80%; font-size: 2.4rem; line-height: 1; color: var(--sc-accent); font-variant-numeric: tabular-nums; }
+  .area { display: grid; grid-template-columns: 1fr 2fr; gap: clamp(32px, 6vw, 96px); margin-top: clamp(64px, 9vw, 120px); padding-top: 28px; border-top: 1px solid var(--line); }
+  .area ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 28px; font-family: var(--sc-font-display); font-stretch: 85%; font-weight: 650; font-size: clamp(1.2rem, 2vw, 1.7rem); }
+
+  /* ---------- Sheet E-1: estimate ---------- */
+  .estimate { padding: clamp(80px, 10vw, 140px) 0 0; border-top: 1px solid var(--sc-ink); }
+  .estimate__grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(32px, 6vw, 96px); align-items: start; }
+  .estimate__side { display: grid; gap: 22px; position: sticky; top: calc(var(--bar-h) + 32px); }
+  .estimate__side dl { display: grid; grid-template-columns: 7rem 1fr; gap: 10px 16px; margin: 8px 0 0; font-size: .95rem; }
+  .estimate__side dt { font-family: var(--sc-font-display); font-stretch: 75%; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; font-size: .74rem; color: var(--sc-ink-soft); padding-top: 3px; }
+  .estimate__side dd { margin: 0; }
+
+  @media (max-width: 900px) {
+    .cover__copy { top: 40px; gap: 16px; }
+    .cover__copy .h-xl { font-size: clamp(2.5rem, 11vw, 3.4rem); }
+    .cover__back { object-position: 64% 60%; }
+    .cover__course { height: 34vh; }
+    .svc__top, .who__grid, .who__item, .area, .estimate__grid { grid-template-columns: 1fr; }
+    .svc__row { grid-template-columns: 1fr; gap: 10px; }
+    .svc__thumb { display: none; }
+    .values__in { grid-template-columns: 1fr; gap: 22px; align-items: start; }
+    .values__head .h-xl { font-size: clamp(2.3rem, 10vw, 3rem); }
+    .values__head .lede { font-size: 1rem; }
+    .course { grid-template-columns: 6.6rem 1fr; gap: 10px; }
+    .course__label b { font-size: .86rem; }
+    .course__label span { display: none; }
+    .blocks { height: 38px; gap: 4px; }
+    .wall { gap: 4px; }
+    .site__plate { aspect-ratio: 16 / 8; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .step + .step { padding-left: 0; border-left: 0; }
+    .step:nth-child(even) { padding-left: 20px; border-left: 1px solid var(--line); }
+    .estimate__side { position: static; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .blk { --t: 1; }
+    .course__label { --tl: 1; }
+    .site__plate { --tp: 1; }
+    .cover__draft path, .cover__draft line { stroke-dashoffset: 0; }
+    .cover__draft text { opacity: 1; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sc-grain" aria-hidden="true"></div>
+<p class="demo-strip"><b>Demo for GALO Built.</b> Built with free stock photos. Your project photos and your own words go in next.</p>
+
+<header class="bar">
+  <a class="mark" href="index.html" aria-label="GALO Built home">
+    <svg viewBox="0 0 28 28" aria-hidden="true"><rect x="1" y="1" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"/><path d="M1 10h26M1 18.5h26M14 1v9M8 10v8.5M20 10v8.5" stroke="currentColor" stroke-width="2"/><rect x="2" y="19.5" width="24" height="6.5" fill="#9A3F26"/></svg>
+    <span>GALO <small>BUILT</small></span>
+  </a>
+  <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav class="nav" id="nav" aria-label="Main">
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+    <a class="btn" href="#estimate">Request an estimate</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- A-0 COVER: pinned layered hero. Back photo, drafting lines, stone course in front. -->
+  <section class="cover" id="cover" data-sheet="A-0" data-sheet-name="Cover" data-sc-act="pin" data-sc-span="1.7">
+    <div data-sc-stage>
+      <img class="cover__back" src="assets/15.webp" srcset="assets/15-s.webp 900w, assets/15.webp 2000w" sizes="100vw" width="2000" height="1333" alt="Modern home with stone clad walls, a pool and a level lawn under a blue sky">
+      <svg class="cover__draft" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <line pathLength="1" x1="980" y1="300" x2="1520" y2="300"/>
+        <line pathLength="1" x1="980" y1="285" x2="980" y2="318"/>
+        <line pathLength="1" x1="1520" y1="285" x2="1520" y2="318"/>
+        <path pathLength="1" d="M1555 360 V640 M1540 360 H1570 M1540 640 H1570"/>
+        <path pathLength="1" d="M760 560 H1300 V600 H760 Z"/>
+        <text x="1180" y="290">STONE VENEER</text>
+        <text x="1575" y="505" transform="rotate(90 1575 505)">SEAT WALL</text>
+        <text x="770" y="625">POOL COPING</text>
+      </svg>
+      <div class="cover__scrim" aria-hidden="true"></div>
+      <div class="cover__course" aria-hidden="true"></div>
+      <div class="cover__copy" data-sc-cue="0 1 0 0">
+        <p class="tag">Masonry · Concrete · Hardscape · Coastal Orange County</p>
+        <h1 class="h-xl">Built on Values.</h1>
+        <p class="lede">Stone, block and concrete work for homeowners, luxury builders and general contractors. Done right, on schedule.</p>
+        <div class="cover__ctas">
+          <a class="btn" href="#estimate">Request an estimate</a>
+          <a class="btn btn--ghost" href="projects.html">See our projects</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S-1 SERVICES: flow + one big reveal -->
+  <section class="svc" id="services" data-sheet="S-1" data-sheet-name="Services" data-sc-act="flow">
+    <div class="wrap">
+      <div class="svc__top">
+        <div class="sc-stack" data-sc-in data-sc-stagger="60">
+          <h2 class="h-lg">Four trades. One crew that answers for all of it.</h2>
+          <p class="lede">From the footing to the last coping stone, the same team plans, builds and cleans up. Nothing handed off halfway.</p>
+        </div>
+        <figure class="svc__img" data-sc-reveal="left" data-sc-reveal-at="0.1 0.5">
+          <img src="assets/21-s.webp" width="900" height="600" loading="lazy" alt="Mason setting a block into fresh mortar with a trowel">
+        </figure>
+      </div>
+      <div class="svc__rows" data-sc-in data-sc-stagger="70">
+        <div class="svc__row">
+          <span class="tag">Masonry</span>
+          <h3 class="h-md">Walls that stay straight for decades.</h3>
+          <p class="body">Block and retaining walls, stone and brick veneer, columns, pilasters, seat walls and garden walls.</p>
+          <div class="svc__thumb"><img src="assets/31-s.webp" width="900" height="600" loading="lazy" alt="Cut stone wall with planting in front"></div>
+        </div>
+        <div class="svc__row">
+          <span class="tag">Concrete</span>
+          <h3 class="h-md">Flatwork with clean lines and real drainage.</h3>
+          <p class="body">Driveways, patios, walkways, steps, footings and decorative finishes, poured and finished by our own crew.</p>
+          <div class="svc__thumb"><img src="assets/17-s.webp" width="900" height="600" loading="lazy" alt="Large covered patio with a smooth stone floor beside a pool"></div>
+        </div>
+        <div class="svc__row">
+          <span class="tag">Hardscape</span>
+          <h3 class="h-md">Pavers and stone, laid on a proper base.</h3>
+          <p class="body">Pavers, travertine, flagstone, pool decks, coping and courtyard paving, set on a compacted base so it stays flat.</p>
+          <div class="svc__thumb"><img src="assets/02-s.webp" width="900" height="600" loading="lazy" alt="Circular paver courtyard with curved stone steps"></div>
+        </div>
+        <div class="svc__row">
+          <span class="tag">Outdoor living</span>
+          <h3 class="h-md">The places people actually gather.</h3>
+          <p class="body">Outdoor fireplaces, fire pits, BBQ islands, built in seating and planters, finished to match the house.</p>
+          <div class="svc__thumb"><img src="assets/10-s.webp" width="900" height="600" loading="lazy" alt="Covered outdoor room with a stone fireplace and lounge chairs"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S-2 WHO WE BUILD FOR: quiet, type only -->
+  <section class="who" id="clients" data-sheet="S-2" data-sheet-name="Who we build for" data-sc-act="flow">
+    <div class="wrap who__grid">
+      <h2 class="h-lg" data-sc-in>Who we build for.</h2>
+      <div class="who__list" data-sc-in data-sc-stagger="70">
+        <div class="who__item">
+          <h3 class="h-md">Homeowners</h3>
+          <p class="body">One point of contact, a written scope, and a site that is clean at the end of every day. You always know what happens next.</p>
+        </div>
+        <div class="who__item">
+          <h3 class="h-md">Luxury residential builders</h3>
+          <p class="body">Detail work on high end homes: stone veneer, custom coping, outdoor rooms. We work to your drawings and your finish standard.</p>
+        </div>
+        <div class="who__item">
+          <h3 class="h-md">General contractors</h3>
+          <p class="body">A masonry and concrete sub that shows up on the day it said, keeps your schedule, and handles its own cleanup and paperwork.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- V-1 BUILT ON VALUES: the peak. Values laid as stone courses, project lands on top. -->
+  <section class="values" id="values" data-sheet="V-1" data-sheet-name="Built on Values" data-sc-act="pin" data-sc-span="3.4">
+    <div data-sc-stage>
+      <div class="values__in">
+        <div class="values__head" data-sc-cue="0 0.97 0 0.03">
+          <h2 class="h-xl">Every job sits on <em>four courses.</em></h2>
+          <p class="lede">The foundation goes in first and nobody sees it later. That is where the values are. Keep scrolling and watch the wall go up.</p>
+        </div>
+        <div class="site" aria-label="The four values, laid as a wall from the bottom up: integrity, craftsmanship, professionalism, dependable execution.">
+          <figure class="site__plate"><img src="assets/16-s.webp" width="900" height="600" alt="" loading="lazy"><figcaption class="tag">The finished project</figcaption></figure>
+          <div class="wall" data-wall>
+            <div class="course"><p class="course__label"><b>Dependable execution</b><span>On site the day we said, done the day we said.</span></p><div class="blocks"></div></div>
+            <div class="course"><p class="course__label"><b>Professionalism</b><span>Clean sites, clear updates, straight answers.</span></p><div class="blocks"></div></div>
+            <div class="course"><p class="course__label"><b>Craftsmanship</b><span>Square, level, plumb. Checked twice.</span></p><div class="blocks"></div></div>
+            <div class="course"><p class="course__label"><b>Integrity</b><span>The price we quote is the price you pay.</span></p><div class="blocks"></div></div>
+          </div>
+          <div class="wall__base" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- P-1 PROJECTS: lateral rail, fact labels -->
+  <section class="work" id="projects" data-sheet="P-1" data-sheet-name="Projects" data-sc-act="pan" data-sc-span="4.6">
+    <div data-sc-stage>
+      <div class="rail" data-sc-pan="0.04">
+        <div class="rail__lead">
+          <p class="tag">Selected work</p>
+          <h2 class="h-lg">The work, up close.</h2>
+          <p class="body">Every project gets the same three facts: what we built, what it is made of, and how it gets used.</p>
+        </div>
+        <figure class="proj">
+          <div class="proj__img"><img src="assets/14-s.webp" width="900" height="506" loading="lazy" alt="Long modern house with a pool deck, stone wall and lawn at dusk"></div>
+          <h3>Pool deck and veneer</h3>
+          <dl><dt>Built</dt><dd>Pool deck, coping, stone veneer wall</dd><dt>Material</dt><dd>Porcelain pavers, cut stone</dd><dt>Use</dt><dd>Family pool and evening lounge</dd></dl>
+        </figure>
+        <figure class="proj">
+          <div class="proj__img"><img src="assets/03-s.webp" width="900" height="600" loading="lazy" alt="Curved stone steps leading up through a planted garden"></div>
+          <h3>Garden steps</h3>
+          <dl><dt>Built</dt><dd>Curved steps, retaining wall, paving</dd><dt>Material</dt><dd>Precast stone, pavers</dd><dt>Use</dt><dd>Hillside garden access</dd></dl>
+        </figure>
+        <figure class="proj">
+          <div class="proj__img"><img src="assets/20-s.webp" width="900" height="506" loading="lazy" alt="Outdoor kitchen counter with a cooktop under a shade roof by a pool"></div>
+          <h3>Outdoor kitchen</h3>
+          <dl><dt>Built</dt><dd>BBQ island, counter, slab</dd><dt>Material</dt><dd>Concrete, stone top</dd><dt>Use</dt><dd>Cooking and dining outside</dd></dl>
+        </figure>
+        <figure class="proj">
+          <div class="proj__img"><img src="assets/16-s.webp" width="900" height="600" loading="lazy" alt="Lap pool beside a modern home with a stone patio and seating"></div>
+          <h3>Lap pool patio</h3>
+          <dl><dt>Built</dt><dd>Patio, coping, planter walls</dd><dt>Material</dt><dd>Limestone pavers, block</dd><dt>Use</dt><dd>Courtyard pool and seating</dd></dl>
+        </figure>
+        <figure class="proj">
+          <div class="proj__img"><img src="assets/25-s.webp" width="900" height="600" loading="lazy" alt="Paver walkway beside a stacked stone wall and clipped hedges"></div>
+          <h3>Entry walk</h3>
+          <dl><dt>Built</dt><dd>Walkway, stacked stone wall</dd><dt>Material</dt><dd>Pavers, natural stone</dd><dt>Use</dt><dd>Front entry and side yard</dd></dl>
+        </figure>
+        <figure class="proj">
+          <div class="proj__img"><img src="assets/01-s.webp" width="900" height="600" loading="lazy" alt="Stone patio with dark wood chairs and a fire table beside a stone clad house"></div>
+          <h3>Fire patio</h3>
+          <dl><dt>Built</dt><dd>Patio, stone cladding, fire feature</dd><dt>Material</dt><dd>Flagstone, ledgestone</dd><dt>Use</dt><dd>Year round outdoor seating</dd></dl>
+        </figure>
+        <div class="rail__end">
+          <h3 class="h-md">Want to see more?</h3>
+          <p class="body">The full gallery is sorted by trade: masonry, concrete, hardscape and outdoor living.</p>
+          <a class="btn btn--ghost" href="projects.html">All projects</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- M-1 METHOD + AREA -->
+  <section class="method" id="method" data-sheet="M-1" data-sheet-name="How a job runs" data-sc-act="flow">
+    <div class="wrap">
+      <h2 class="h-lg" data-sc-in style="max-width: 18ch">How a job runs, start to finish.</h2>
+      <div class="steps" data-sc-in data-sc-stagger="70">
+        <div class="step"><span class="num">1</span><h3 class="h-md">Site walk</h3><p class="body">We meet you on site, measure, and talk through how the space will be used.</p></div>
+        <div class="step"><span class="num">2</span><h3 class="h-md">Written estimate</h3><p class="body">A clear scope with materials, schedule and price. No vague line items.</p></div>
+        <div class="step"><span class="num">3</span><h3 class="h-md">The build</h3><p class="body">Our own crew does the work. You get updates without having to ask.</p></div>
+        <div class="step"><span class="num">4</span><h3 class="h-md">Final walk</h3><p class="body">We walk it together, fix anything on the list, and leave the site clean.</p></div>
+      </div>
+      <div class="area" data-sc-in data-sc-stagger="60">
+        <h3 class="h-md">Where we work</h3>
+        <ul>
+          <li>Newport Beach</li><li>Corona del Mar</li><li>Laguna Beach</li><li>Dana Point</li><li>San Clemente</li><li>Huntington Beach</li><li>Irvine</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- E-1 ESTIMATE: the close. A work order, nothing else moving. -->
+  <section class="estimate" id="estimate" data-sheet="E-1" data-sheet-name="Request an estimate" data-sc-act="flow">
+    <div class="wrap estimate__grid">
+      <div class="estimate__side">
+        <h2 class="h-lg">Request an estimate.</h2>
+        <p class="lede">Tell us about the project. We reply within one business day to set up a site walk.</p>
+        <dl>
+          <dt>Phone</dt><dd>Your number here</dd>
+          <dt>Email</dt><dd>hello@galobuilt.com</dd>
+          <dt>License</dt><dd>CA license number here</dd>
+          <dt>Area</dt><dd>Coastal Orange County</dd>
+        </dl>
+      </div>
+      <div class="order">
+        <div class="order__head"><span class="tag">Work order · Estimate request</span><span class="tag">E-1</span></div>
+        <form method="post" action="#" novalidate>
+          <div class="order__grid">
+            <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
+            <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+            <div class="field"><label for="f-city">Project city</label><input id="f-city" name="city" autocomplete="address-level2" placeholder="Newport Beach"></div>
+            <fieldset class="field field--full"><legend>I am a</legend>
+              <div class="chips">
+                <label><input type="radio" name="who" value="Homeowner" checked><span>Homeowner</span></label>
+                <label><input type="radio" name="who" value="Builder"><span>Builder</span></label>
+                <label><input type="radio" name="who" value="General contractor"><span>General contractor</span></label>
+              </div>
+            </fieldset>
+            <fieldset class="field field--full"><legend>Work needed</legend>
+              <div class="chips">
+                <label><input type="checkbox" name="work" value="Masonry"><span>Masonry</span></label>
+                <label><input type="checkbox" name="work" value="Concrete"><span>Concrete</span></label>
+                <label><input type="checkbox" name="work" value="Hardscape"><span>Hardscape</span></label>
+                <label><input type="checkbox" name="work" value="Outdoor living"><span>Outdoor living</span></label>
+              </div>
+            </fieldset>
+            <div class="field field--full"><label for="f-msg">About the project</label><textarea id="f-msg" name="message" placeholder="What you want built, rough size, and when you would like to start."></textarea></div>
+            <div class="hp" aria-hidden="true"><label>Leave empty <input name="company_site" tabindex="-1" autocomplete="off"></label></div>
+          </div>
+          <div class="order__foot">
+            <p class="form-note">Demo form. On the live site this goes straight to your inbox, with spam protection.</p>
+            <button class="btn" type="submit">Request an estimate</button>
+          </div>
+        </form>
+        <div class="form-done" tabindex="-1">
+          <h3 class="h-md">Thanks, <span data-first>there</span>.</h3>
+          <p class="body" style="margin-top:10px">This is the demo, so nothing was sent. On the live site your request lands in the GALO Built inbox and you get a reply within one business day.</p>
+        </div>
+      </div>
+    </div>
+    <footer class="foot">
+      <div><strong>GALO Built</strong><br>Masonry, concrete and hardscape. Coastal Orange County, California.</div>
+      <div><a href="about.html">About</a> · <a href="services.html">Services</a> · <a href="projects.html">Projects</a> · <a href="contact.html">Contact</a></div>
+      <div>Demo by Solumbra. Photos: Unsplash.</div>
+    </footer>
+  </section>
+
+</main>
+
+<div class="titleblock">
+  <span class="titleblock__sheet">A-0</span>
+  <button aria-expanded="false" aria-label="Open sheet index"><span class="titleblock__name">Cover</span><span class="titleblock__proj">GALO Built · Sheet index</span></button>
+  <ul class="sheets"></ul>
+</div>
+
+<script>
+  // Build the values wall: decorative blocks in running bond, numbered bottom-up.
+  (function () {
+    const wall = document.querySelector('[data-wall]');
+    const courses = [...wall.querySelectorAll('.course')].reverse(); // bottom first
+    let i = 0;
+    const rnd = (s => () => (s = (s * 9301 + 49297) % 233280) / 233280)(7);
+    courses.forEach((c, row) => {
+      const blocks = c.querySelector('.blocks');
+      const half = row % 2 === 1;
+      const n = half ? 6 : 5;
+      const parts = [];
+      if (half) parts.push('half');
+      for (let k = 0; k < n - (half ? 1 : 0); k++) parts.push('full');
+      if (half) parts.push('half');
+      parts.forEach(kind => {
+        const b = document.createElement('span');
+        b.className = 'blk' + (kind === 'half' ? ' blk--half' : '');
+        b.style.setProperty('--i', i++);
+        b.style.setProperty('--bx', Math.round(rnd() * 100) + '%');
+        b.style.setProperty('--by', Math.round(rnd() * 100) + '%');
+        b.style.setProperty('--r', ((rnd() * 6) - 3).toFixed(1) + 'deg');
+        b.style.setProperty('--lit', rnd().toFixed(2));
+        blocks.appendChild(b);
+      });
+      c.querySelector('.course__label').style.setProperty('--last', i - 0.4);
+    });
+    wall.parentElement.style.setProperty('--n', i);
+  })();
+</script>
+<script src="scrollcraft.js"></script>
+<script>ScrollCraft.mount(document.body);</script>
+<script src="site.js"></script>
+</body>
+</html>
