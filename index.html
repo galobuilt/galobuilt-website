@@ -75,11 +75,11 @@
   .site__plate img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; }
   .site__plate figcaption { position: absolute; left: 12px; bottom: 10px; color: #F4F5F1; background: rgba(14,16,17,.72); padding: 5px 9px; }
   .wall { display: grid; gap: 6px; padding-top: 6px; }
-  .course { display: grid; grid-template-columns: 15rem 1fr; gap: 18px; align-items: center; }
+  .course { display: grid; grid-template-columns: 17rem 1fr; gap: 18px; align-items: center; }
   .course__label { text-align: right; --tl: clamp(0, var(--k) - var(--last), 1); opacity: calc(0.18 + var(--tl) * 0.82); transform: translate3d(calc((1 - var(--tl)) * 10px), 0, 0); }
   .course__label { margin: 0; line-height: 1.25; }
-  .course__label b { display: block; font-family: var(--sc-font-display); font-stretch: 80%; font-weight: 800; font-size: 1.05rem; white-space: nowrap; letter-spacing: .02em; text-transform: uppercase; color: var(--bone); }
-  .course__label span { white-space: nowrap; font-size: .82rem; color: var(--bone-soft); line-height: 1.4; display: block; }
+  .course__label b { display: block; font-family: var(--sc-font-display); font-stretch: 80%; font-weight: 800; font-size: 1.05rem; white-space: normal; text-wrap: balance; letter-spacing: .02em; text-transform: uppercase; color: var(--bone); }
+  .course__label span { white-space: normal; font-size: .82rem; color: var(--bone-soft); line-height: 1.4; display: block; }
   .blocks { display: flex; gap: 6px; height: clamp(52px, 8.4vh, 84px); }
   .blk { flex: 2 1 0; background: url(assets/galo/flagstone.webp) var(--bx, 0) 50% / 900% 160%; border-radius: 1px;
     box-shadow: inset 0 1px 0 rgba(255,255,255,.22), inset 0 -8px 14px rgba(0,0,0,.28), 0 6px 10px -4px rgba(0,0,0,.6);
@@ -130,12 +130,12 @@
     .values__in { grid-template-columns: 1fr; gap: 22px; align-items: start; }
     .values__head .h-xl { font-size: clamp(2.3rem, 10vw, 3rem); }
     .values__head .lede { font-size: 1rem; }
-    .course { grid-template-columns: 6.6rem 1fr; gap: 10px; }
-    .course__label b { font-size: .86rem; }
+    .course { grid-template-columns: 8.4rem 1fr; gap: 10px; }
+    .course__label b { font-size: .8rem; line-height: 1.15; }
     .course__label span { display: none; }
     .blocks { height: 38px; gap: 4px; }
     .wall { gap: 4px; }
-    .site__plate { aspect-ratio: 16 / 8; }
+    .site__plate { aspect-ratio: 16 / 8; transform: translate3d(0, calc((1 - var(--tp)) * -3vh), 0); }
     .steps { grid-template-columns: 1fr 1fr; }
     .step + .step { padding-left: 0; border-left: 0; }
     .step:nth-child(even) { padding-left: 20px; border-left: 1px solid var(--line); }
@@ -187,7 +187,6 @@
         <text x="1600" y="745" transform="rotate(90 1600 745)">POOL COPING</text>
       </svg>
       <div class="cover__scrim" aria-hidden="true"></div>
-      <div class="cover__course" aria-hidden="true"></div>
       <div class="cover__copy" data-sc-cue="0 1 0 0">
         <p class="tag">Masonry · Concrete · Hardscape · Newport Coast</p>
         <h1 class="h-xl">Elevating outdoor living.</h1>
