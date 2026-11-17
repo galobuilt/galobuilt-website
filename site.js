@@ -90,6 +90,7 @@
         if (!j.success) throw j;
         const n = String(body.name || '').trim().split(' ')[0];
         order.querySelector('[data-first]').textContent = n || 'there';
+        if (window.gtag) gtag('event', 'generate_lead', { form: 'consultation', page: location.pathname });
         order.setAttribute('data-done', '');
         order.querySelector('.form-done').focus();
       } catch (err) {
