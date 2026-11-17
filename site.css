@@ -1,19 +1,19 @@
 /* GALO Built: page styles on top of scrollcraft.css. Tokens first. */
 :root {
-  --sc-canvas: #E4E5E2;
-  --sc-surface: #F3F3F1;
-  --sc-ink: #15181A;
-  --sc-ink-soft: #4A5154;
-  --sc-accent: #9A3F26;
-  --sc-accent-ink: #FBF4EF;
+  --sc-canvas: #EEEAE2;
+  --sc-surface: #F8F5EF;
+  --sc-ink: #1F1E1B;
+  --sc-ink-soft: #57524A;
+  --sc-accent: #8A5A33;
+  --sc-accent-ink: #FBF6EE;
   --sc-font-display: "Archivo", system-ui, sans-serif;
   --sc-font-text: "Geist", system-ui, sans-serif;
   --line: color-mix(in oklab, var(--sc-ink) 18%, transparent);
-  --dark: #16191A;
+  --dark: #1D1C19;
   --dark-2: #1F2324;
-  --bone: #ECEDE9;
-  --bone-soft: #A9AFAD;
-  --brick-light: #E08262;
+  --bone: #EEEAE2;
+  --bone-soft: #B4ADA2;
+  --brick-light: #D4A274;
   --bar-h: 64px;
 }
 html { background: var(--sc-canvas); }
@@ -46,6 +46,7 @@ img { max-width: 100%; display: block; }
 }
 .mark { display: flex; align-items: center; gap: 10px; color: var(--sc-ink); text-decoration: none; }
 .mark svg { width: 28px; height: 28px; }
+.mark__logo { width: auto; height: 42px; display: block; }
 .mark span { font-family: var(--sc-font-display); font-weight: 800; font-stretch: 80%; letter-spacing: 0.08em; font-size: 1.05rem; }
 .mark small { font-weight: 500; letter-spacing: 0.14em; color: var(--sc-ink-soft); }
 .nav { display: flex; align-items: center; gap: 28px; }
@@ -141,7 +142,7 @@ fieldset.field { border: 0; margin: 0; min-width: 0; }
 /* Inner page hero */
 .page-hero { position: relative; min-height: 62vh; display: grid; align-items: end; overflow: hidden; color: var(--bone); }
 .page-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.page-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 35%, rgba(14,16,17,.78) 100%); }
+.page-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14,16,17,.35) 0%, rgba(14,16,17,.5) 40%, rgba(14,16,17,.86) 100%); }
 .page-hero .wrap { position: relative; z-index: 2; padding-bottom: clamp(32px, 6vw, 72px); display: grid; gap: 14px; }
 .page-hero .tag { color: #D7DAD6; }
 .page-hero .lede { color: #E2E4E0; }
@@ -168,3 +169,6 @@ fieldset.field { border: 0; margin: 0; min-width: 0; }
 .field input[type=file]::file-selector-button { font: inherit; font-size: .85rem; margin-right: 12px; padding: 8px 14px; border: 1px solid var(--sc-ink); background: transparent; color: var(--sc-ink); cursor: pointer; }
 [data-form-status]:empty { display: none; }
 [data-form-status].is-error { color: var(--sc-accent); }
+
+.sc-stack .body + .body { margin-top: 4px; }
+.section + .section.band, .section.band + .section { padding-top: clamp(64px, 10vw, 140px); }

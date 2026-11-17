@@ -3,9 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Projects · Masonry and Hardscape Portfolio | GALO Built</title>
-<meta name="description" content="Selected masonry, concrete, hardscape and outdoor living projects by GALO Built in coastal Orange County.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><rect width='28' height='28' fill='%2315181A'/><path d='M3 10h22M3 18h22M14 3v7M8 10v8M20 10v8M14 18v7' stroke='%23E4E5E2' stroke-width='2'/><rect x='3' y='18' width='22' height='7' fill='%239A3F26'/></svg>">
+<title>Our Work and Experience · GALO Built</title>
+<meta name="description" content="Selected masonry, concrete and hardscape projects by GALO Built and its field team in Corona del Mar, Newport Beach and coastal Orange County.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
@@ -25,7 +26,7 @@
   .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0 36px; }
   .filters button { font: 500 .92rem var(--sc-font-text); padding: 10px 16px; border: 1px solid var(--line); background: transparent; color: var(--sc-ink); cursor: pointer; border-radius: 0; transition: background-color .14s var(--sc-ease-out); }
   .filters button[aria-pressed="true"] { background: var(--sc-ink); color: var(--sc-surface); border-color: var(--sc-ink); }
-  .gal { display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(14px, 1.6vw, 24px); }
+  .gal { display: grid; grid-auto-flow: dense; grid-template-columns: repeat(12, 1fr); gap: clamp(14px, 1.6vw, 24px); }
   .gal figure { margin: 0; display: grid; gap: 10px; grid-column: span 4; }
   .gal figure.w { grid-column: span 8; }
   .gal figure[hidden] { display: none; }
@@ -48,34 +49,41 @@
 </head>
 <body>
 <div class="sc-grain" aria-hidden="true"></div>
-<p class="demo-strip"><b>Demo for GALO Built.</b> Built with free stock photos. Your project photos and your own words go in next.</p>
 
 <header class="bar">
   <a class="mark" href="index.html" aria-label="GALO Built home">
-    <svg viewBox="0 0 28 28" aria-hidden="true"><rect x="1" y="1" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"/><path d="M1 10h26M1 18.5h26M14 1v9M8 10v8.5M20 10v8.5" stroke="currentColor" stroke-width="2"/><rect x="2" y="19.5" width="24" height="6.5" fill="#9A3F26"/></svg>
+    <img class="mark__logo" src="assets/galo/logo-badge.webp" width="200" height="192" alt="">
     <span>GALO <small>BUILT</small></span>
   </a>
   <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
   <nav class="nav" id="nav" aria-label="Main">
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
-    <a href="projects.html" aria-current="page">Projects</a>
+    <a href="projects.html" aria-current="page">Our Work</a>
     <a href="contact.html">Contact</a>
-    <a class="btn" href="contact.html">Request an estimate</a>
+    <a class="btn" href="contact.html">Request a consultation</a>
   </nav>
 </header>
 <main>
-<section class="page-hero" id="top-P-1" data-sheet="P-1" data-sheet-name="Projects">
-  <img src="assets/16.webp" srcset="assets/16-s.webp 900w, assets/16.webp 2000w" sizes="100vw" width="2000" height="1333" alt="Lap pool beside a modern home with a stone patio">
-  <div class="wrap"><p class="tag">Projects</p><h1 class="h-xl">The work, up close.</h1><p class="lede">Sorted by trade. Each project shows what we built and what it is made of.</p></div>
+<section class="page-hero" id="top-P-1" data-sheet="P-1" data-sheet-name="Our work">
+  <img src="assets/galo/hvhs-pool.webp" srcset="assets/galo/hvhs-pool-s.webp 900w, assets/galo/hvhs-pool.webp 2400w" sizes="100vw" width="2400" height="1600" alt="Pool deck and outdoor dining under a pergola at a home in Corona del Mar">
+  <div class="wrap"><p class="tag">Our work and experience</p><h1 class="h-xl">Craftsmanship built on experience.</h1><p class="lede">Every exceptional project begins with skilled hands, attention to detail and a commitment to quality.</p></div>
 </section>
+<section class="section" style="padding-bottom:0"><div class="wrap sc-stack" data-sc-in style="max-width:860px">
+  <p class="body">Our foundation includes the hands on construction experience of Luis Ordunez and the craftsmen who work alongside him. Below are selected projects completed by GALO Masonry, Inc., along with work our field leadership and crews did before GALO. Each photo says which is which.</p>
+</div></section>
 <section class="section" id="gallery" data-sheet="P-2" data-sheet-name="Gallery" style="padding-top:clamp(40px,5vw,64px)">
   <div class="wrap">
-    <div class="filters" role="group" aria-label="Filter projects by trade">
-      <button aria-pressed="true" data-f="all">All</button><button aria-pressed="false" data-f="masonry">Masonry</button><button aria-pressed="false" data-f="concrete">Concrete</button><button aria-pressed="false" data-f="hardscape">Hardscape</button><button aria-pressed="false" data-f="outdoor">Outdoor living</button>
+    <div class="filters" role="group" aria-label="Filter by project">
+      <button aria-pressed="true" data-f="all">All</button><button aria-pressed="false" data-f="sandkey">Sand Key</button><button aria-pressed="false" data-f="outrigger">Outrigger</button><button aria-pressed="false" data-f="hvhs">Harborview Hills South</button><button aria-pressed="false" data-f="spyglass">Spyglass</button>
     </div>
-    <div class="gal"><figure class="w" data-cat="hardscape"><div class="im"><img src="assets/14-s.webp" width="900" height="600" loading="lazy" alt="Modern house with pool deck and stone wall at dusk"></div><figcaption><b>Pool deck and veneer</b><span class="tag">Hardscape</span></figcaption></figure><figure class="" data-cat="masonry"><div class="im"><img src="assets/03-s.webp" width="900" height="600" loading="lazy" alt="Curved stone steps through a planted garden"></div><figcaption><b>Garden steps</b><span class="tag">Masonry</span></figcaption></figure><figure class="" data-cat="outdoor"><div class="im"><img src="assets/20-s.webp" width="900" height="600" loading="lazy" alt="Outdoor kitchen counter under a shade roof"></div><figcaption><b>Outdoor kitchen</b><span class="tag">Outdoor living</span></figcaption></figure><figure class="" data-cat="hardscape"><div class="im"><img src="assets/16-s.webp" width="900" height="600" loading="lazy" alt="Lap pool beside a stone patio"></div><figcaption><b>Lap pool patio</b><span class="tag">Hardscape</span></figcaption></figure><figure class="" data-cat="masonry"><div class="im"><img src="assets/25-s.webp" width="900" height="600" loading="lazy" alt="Paver walk beside a stacked stone wall"></div><figcaption><b>Entry walk</b><span class="tag">Masonry</span></figcaption></figure><figure class="" data-cat="outdoor"><div class="im"><img src="assets/01-s.webp" width="900" height="600" loading="lazy" alt="Stone patio with a fire table"></div><figcaption><b>Fire patio</b><span class="tag">Outdoor living</span></figcaption></figure><figure class="w" data-cat="concrete"><div class="im"><img src="assets/17-s.webp" width="900" height="600" loading="lazy" alt="Large covered patio floor beside a pool"></div><figcaption><b>Covered patio slab</b><span class="tag">Concrete</span></figcaption></figure><figure class="" data-cat="concrete"><div class="im"><img src="assets/13-s.webp" width="900" height="600" loading="lazy" alt="Pool terrace in front of a modern white house"></div><figcaption><b>Pool terrace</b><span class="tag">Concrete</span></figcaption></figure><figure class="" data-cat="hardscape"><div class="im"><img src="assets/26-s.webp" width="900" height="600" loading="lazy" alt="Small pool with stone coping and deck"></div><figcaption><b>Pool coping and deck</b><span class="tag">Hardscape</span></figcaption></figure><figure class="" data-cat="outdoor"><div class="im"><img src="assets/10-s.webp" width="900" height="600" loading="lazy" alt="Stone fireplace in a covered outdoor room"></div><figcaption><b>Fireplace room</b><span class="tag">Outdoor living</span></figcaption></figure></div>
-    <p class="body" style="margin-top:32px">Sample photos for the demo. Your own project photos replace these, and you can add new ones yourself from the site editor.</p>
+    <div class="gal"><figure class="w" data-cat="hvhs"><div class="im"><img src="assets/galo/hvhs-courtyard-s.webp" width="900" height="600" loading="lazy" alt="Pool, deck and planted garden wall"></div><figcaption><b>Harborview Hills South</b><span class="tag">Previous work by our field team</span></figcaption></figure><figure class="" data-cat="sandkey"><div class="im"><img src="assets/galo/sandkey-entry-s.webp" width="900" height="1200" loading="lazy" alt="New front walk and planting beds"></div><figcaption><b>Sand Key</b><span class="tag">GALO Built project</span></figcaption></figure><figure class="" data-cat="spyglass"><div class="im"><img src="assets/galo/spyglass-terrace-s.webp" width="900" height="1200" loading="lazy" alt="Balcony and pool terrace with an ocean view"></div><figcaption><b>Spyglass</b><span class="tag">Previous work by our field team</span></figcaption></figure><figure class="" data-cat="hvhs"><div class="im"><img src="assets/galo/hvhs-pool-s.webp" width="900" height="600" loading="lazy" alt="Pool deck and outdoor dining under a pergola"></div><figcaption><b>Harborview Hills South</b><span class="tag">Previous work by our field team</span></figcaption></figure><figure class="" data-cat="outrigger"><div class="im"><img src="assets/galo/outrigger-walk-s.webp" width="900" height="1200" loading="lazy" alt="Flagstone front walk"></div><figcaption><b>Outrigger</b><span class="tag">GALO Built project</span></figcaption></figure><figure class="w" data-cat="spyglass"><div class="im"><img src="assets/galo/spyglass-front-s.webp" width="900" height="600" loading="lazy" alt="Front of a white modern home"></div><figcaption><b>Spyglass</b><span class="tag">Previous work by our field team</span></figcaption></figure><figure class="" data-cat="sandkey"><div class="im"><img src="assets/galo/sandkey-patio-s.webp" width="900" height="1200" loading="lazy" alt="Crew setting large format pavers"></div><figcaption><b>Sand Key</b><span class="tag">GALO Built project</span></figcaption></figure><figure class="" data-cat="hvhs"><div class="im"><img src="assets/galo/hvhs-front-s.webp" width="900" height="600" loading="lazy" alt="Street view with a low front wall"></div><figcaption><b>Harborview Hills South</b><span class="tag">Previous work by our field team</span></figcaption></figure><figure class="" data-cat="outrigger"><div class="im"><img src="assets/galo/outrigger-drive-s.webp" width="900" height="1200" loading="lazy" alt="Flagstone and concrete driveway"></div><figcaption><b>Outrigger</b><span class="tag">GALO Built project</span></figcaption></figure><figure class="w" data-cat="spyglass"><div class="im"><img src="assets/galo/spyglass-walk-s.webp" width="900" height="600" loading="lazy" alt="Stone walkway beside a glass wall"></div><figcaption><b>Spyglass</b><span class="tag">Previous work by our field team</span></figcaption></figure><figure class="" data-cat="sandkey"><div class="im"><img src="assets/galo/sandkey-tile-s.webp" width="900" height="1200" loading="lazy" alt="Porcelain paver set into mortar"></div><figcaption><b>Sand Key</b><span class="tag">GALO Built project</span></figcaption></figure><figure class="" data-cat="hvhs"><div class="im"><img src="assets/galo/hvhs-outrigger-pool-s.webp" width="900" height="600" loading="lazy" alt="Pool and wood clad wall"></div><figcaption><b>Harborview Hills South</b><span class="tag">Previous work by our field team</span></figcaption></figure><figure class="" data-cat="sandkey"><div class="im"><img src="assets/galo/sandkey-pool-s.webp" width="900" height="1200" loading="lazy" alt="Scratch coat on a new block wall"></div><figcaption><b>Sand Key</b><span class="tag">GALO Built project</span></figcaption></figure><figure class="" data-cat="sandkey"><div class="im"><img src="assets/galo/sandkey-planting-s.webp" width="900" height="1200" loading="lazy" alt="Finishing the planting beds"></div><figcaption><b>Sand Key</b><span class="tag">GALO Built project</span></figcaption></figure></div>
+  </div>
+</section>
+<section class="section band" id="next" data-sheet="P-3" data-sheet-name="Work with us">
+  <div class="wrap sc-stack" data-sc-in data-sc-stagger="60" style="max-width:820px">
+    <h2 class="h-lg">Built on Values. Defined by Craftsmanship.</h2>
+    <p><a class="btn" href="contact.html">Request a consultation</a></p>
   </div>
 </section>
 <script>
@@ -86,9 +94,9 @@ document.querySelectorAll('.filters button').forEach(b => b.addEventListener('cl
 </script>
 </main>
 <footer class="foot">
-      <div><strong>GALO Built</strong><br>Masonry, concrete and hardscape. Coastal Orange County, California.</div>
-      <div><a href="about.html">About</a> · <a href="services.html">Services</a> · <a href="projects.html">Projects</a> · <a href="contact.html">Contact</a></div>
-      <div>Demo by Solumbra. Photos: Unsplash.</div>
+      <div><strong>GALO Built</strong><br>GALO Masonry, Inc. · CSLB #1154441<br>Masonry, concrete and hardscape in Newport Coast and coastal Orange County.</div>
+      <div><a href="about.html">About</a> · <a href="services.html">Services</a> · <a href="projects.html">Our Work</a> · <a href="contact.html">Contact</a></div>
+      <div><a href="tel:+19498472227">(949) 847-2227</a><br><a href="mailto:estimates@galobuilt.com">estimates@galobuilt.com</a><br><a href="https://instagram.com/galobuilt" rel="noopener" target="_blank">Instagram</a></div>
     </footer>
 <div class="titleblock">
   <span class="titleblock__sheet">A-0</span>
