@@ -10,12 +10,19 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/galo/hvhs-courtyard-s.webp" imagesrcset="assets/galo/hvhs-courtyard-s.webp 900w, assets/galo/hvhs-courtyard.webp 2400w" imagesizes="100vw" fetchpriority="high">
 <link rel="stylesheet" href="scrollcraft.css">
 <link rel="stylesheet" href="site.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"GALO Built","legalName":"GALO Masonry, Inc.","url":"https://galobuilt.com","logo":"https://galobuilt.com/assets/galo/logo-512.png","image":"https://galobuilt.com/assets/galo/hvhs-courtyard.webp","telephone":"+1-949-847-2227","email":"estimates@galobuilt.com","slogan":"Built on Values","description":"Custom masonry, concrete and hardscape construction for homeowners, custom homebuilders and general contractors in Newport Coast and coastal Orange County.","areaServed":["Newport Coast","Newport Beach","Corona del Mar","Irvine","Laguna Beach","Laguna Woods","Laguna Niguel","Aliso Viejo"],"address":{"@type":"PostalAddress","addressRegion":"CA","addressCountry":"US"},"sameAs":["https://instagram.com/galobuilt"]}
 </script>
 <style>
+  /* Reserve pinned heights before the engine runs, so nothing jumps (CLS). Same values as data-sc-span. */
+  [data-sc-act][data-sc-span] { position: relative; }
+  [data-sc-stage] { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: clip; z-index: var(--sc-z-stage); }
+  #cover[data-sc-span] { height: 170vh; }
+  #values[data-sc-span] { height: 340vh; }
+  #projects[data-sc-span] { height: 460vh; }
   /* ---------- Sheet A-0: cover, layered ---------- */
   .cover { background: var(--dark); }
   .cover .sc-stage { overflow: hidden; background: var(--dark); }
@@ -177,7 +184,7 @@
   <!-- A-0 COVER: pinned layered hero. Back photo, drafting lines, stone course in front. -->
   <section class="cover" id="cover" data-sheet="A-0" data-sheet-name="Cover" data-sc-act="pin" data-sc-span="1.7">
     <div data-sc-stage>
-      <img class="cover__back" src="assets/galo/hvhs-courtyard.webp" srcset="assets/galo/hvhs-courtyard-s.webp 900w, assets/galo/hvhs-courtyard.webp 2400w" sizes="100vw" width="2400" height="1600" alt="Pool and pale stone deck beside a planted garden wall at a modern home in Corona del Mar">
+      <img class="cover__back" fetchpriority="high" decoding="async" src="assets/galo/hvhs-courtyard.webp" srcset="assets/galo/hvhs-courtyard-s.webp 900w, assets/galo/hvhs-courtyard.webp 2400w" sizes="100vw" width="2400" height="1600" alt="Pool and pale stone deck beside a planted garden wall at a modern home in Corona del Mar">
       <svg class="cover__draft" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         <line pathLength="1" x1="1000" y1="392" x2="1560" y2="392"/>
         <line pathLength="1" x1="1000" y1="378" x2="1000" y2="406"/>
