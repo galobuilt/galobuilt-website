@@ -88,6 +88,8 @@ img { max-width: 100%; display: block; }
   background: var(--sc-surface); border: 1px solid var(--sc-ink); display: none;
 }
 .titleblock[data-open] .sheets { display: block; }
+.titleblock { transition: opacity .25s ease, transform .25s ease; }
+.titleblock.is-away { opacity: 0; transform: translateY(8px); pointer-events: none; }
 .sheets a { display: grid; grid-template-columns: 3.4em 1fr; gap: 8px; padding: 8px 12px; color: var(--sc-ink); text-decoration: none; }
 .sheets a:hover, .sheets a:focus-visible { background: color-mix(in oklab, var(--sc-ink) 8%, transparent); outline: none; }
 .sheets b { font-weight: 800; }

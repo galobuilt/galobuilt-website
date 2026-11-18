@@ -28,6 +28,14 @@
       set(cur);
     };
     addEventListener('scroll', pick, { passive: true }); pick();
+    // Phones: the stamp would cover the form and the footer, so it steps aside while they are on screen.
+    const phone = matchMedia('(max-width: 760px)');
+    const inView = new Set();
+    const io = new IntersectionObserver(es => {
+      es.forEach(e => e.isIntersecting ? inView.add(e.target) : inView.delete(e.target));
+      tb.classList.toggle('is-away', phone.matches && inView.size > 0);
+    }, { rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('form, footer').forEach(el => io.observe(el));
     const close = () => { tb.removeAttribute('data-open'); btn.setAttribute('aria-expanded', 'false'); };
     btn.addEventListener('click', () => { const o = tb.toggleAttribute('data-open'); btn.setAttribute('aria-expanded', String(o)); });
     list.addEventListener('click', e => { if (e.target.closest('a')) close(); });
