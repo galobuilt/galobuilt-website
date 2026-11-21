@@ -28,7 +28,7 @@
   @font-face { font-family: 'Archivo'; font-style: normal; font-weight: 400 900; font-stretch: 62% 125%; font-display: swap; src: url(assets/fonts/archivo-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
   @font-face { font-family: 'Geist'; font-style: normal; font-weight: 400 600; font-display: swap; src: url(assets/fonts/geist-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 </style>
-<link rel="preload" as="image" href="assets/galo/hvhs-courtyard-s.webp" imagesrcset="assets/galo/hvhs-courtyard-s.webp 900w, assets/galo/hvhs-courtyard.webp 2400w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" href="assets/galo/hvhs-courtyard-s.webp" imagesrcset="assets/galo/hvhs-courtyard-s.webp 900w, assets/galo/hvhs-courtyard-m.webp 1400w, assets/galo/hvhs-courtyard.webp 2400w" imagesizes="100vw" fetchpriority="high">
 <link rel="stylesheet" href="scrollcraft.css">
 <link rel="stylesheet" href="site.css">
 <script type="application/ld+json">
@@ -202,7 +202,7 @@
   <!-- A-0 COVER: pinned layered hero. Back photo, drafting lines, stone course in front. -->
   <section class="cover" id="cover" data-sheet="A-0" data-sheet-name="Cover" data-sc-act="pin" data-sc-span="1.7">
     <div data-sc-stage>
-      <img class="cover__back" fetchpriority="high" decoding="async" src="assets/galo/hvhs-courtyard.webp" srcset="assets/galo/hvhs-courtyard-s.webp 900w, assets/galo/hvhs-courtyard.webp 2400w" sizes="100vw" width="2400" height="1600" alt="Pool and pale stone deck beside a planted garden wall at a modern home in Corona del Mar">
+      <img class="cover__back" fetchpriority="high" decoding="async" src="assets/galo/hvhs-courtyard.webp" srcset="assets/galo/hvhs-courtyard-s.webp 900w, assets/galo/hvhs-courtyard-m.webp 1400w, assets/galo/hvhs-courtyard.webp 2400w" sizes="100vw" width="2400" height="1600" alt="Pool and pale stone deck beside a planted garden wall at a modern home in Corona del Mar">
       <svg class="cover__draft" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         <line pathLength="1" x1="1000" y1="392" x2="1560" y2="392"/>
         <line pathLength="1" x1="1000" y1="378" x2="1000" y2="406"/>
@@ -398,17 +398,17 @@
             <div class="field"><label for="f-city">Project location</label><input id="f-city" name="city" autocomplete="address-level2" placeholder="Newport Beach"></div>
             <fieldset class="field field--full"><legend>I am a</legend>
               <div class="chips">
-                <label><input type="radio" name="who" value="Homeowner" checked><span>Homeowner</span></label>
-                <label><input type="radio" name="who" value="Custom homebuilder"><span>Custom homebuilder</span></label>
-                <label><input type="radio" name="who" value="General contractor"><span>General contractor</span></label>
+                <label><input type="radio" name="who" value="Homeowner" checked><span data-k="index-89">Homeowner</span></label>
+                <label><input type="radio" name="who" value="Custom homebuilder"><span data-k="index-90">Custom homebuilder</span></label>
+                <label><input type="radio" name="who" value="General contractor"><span data-k="index-91">General contractor</span></label>
               </div>
             </fieldset>
             <fieldset class="field field--full"><legend>Work needed</legend>
               <div class="chips">
-                <label><input type="checkbox" name="work" value="Masonry and stonework"><span>Masonry and stonework</span></label>
-                <label><input type="checkbox" name="work" value="Concrete"><span>Concrete</span></label>
-                <label><input type="checkbox" name="work" value="Pavers and hardscape"><span>Pavers and hardscape</span></label>
-                <label><input type="checkbox" name="work" value="Outdoor living"><span>Outdoor living</span></label>
+                <label><input type="checkbox" name="work" value="Masonry and stonework"><span data-k="index-92">Masonry and stonework</span></label>
+                <label><input type="checkbox" name="work" value="Concrete"><span data-k="index-93">Concrete</span></label>
+                <label><input type="checkbox" name="work" value="Pavers and hardscape"><span data-k="index-94">Pavers and hardscape</span></label>
+                <label><input type="checkbox" name="work" value="Outdoor living"><span data-k="index-95">Outdoor living</span></label>
               </div>
             </fieldset>
             <div class="field field--full"><label for="f-msg">About the project</label><textarea id="f-msg" name="message" placeholder="What you have in mind, the rough size, and when you would like to start."></textarea></div>
