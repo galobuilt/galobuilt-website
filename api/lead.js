@@ -40,7 +40,7 @@ module.exports = async (req, res) => {
   try { body = await readJson(req); } catch (e) { return reply(res, 400, false); }
 
   // Spam checks: the hidden box must be empty, and a person takes more than 3 seconds to fill the form.
-  if (body._honey) return reply(res, 200, true);
+  if (body._honey || body.company_site) return reply(res, 200, true);
   if (Number(body._ms) > 0 && Number(body._ms) < 3000) return reply(res, 200, true);
 
   const fields = {};
