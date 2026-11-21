@@ -15,6 +15,8 @@ for f in ['index.html', 'about.html', 'services.html', 'projects.html', 'contact
         tag, attrs, inner = m.group(1), m.group(2), m.group(3)
         if 'data-k=' in attrs or 'class="hp"' in attrs: return m.group(0)
         if not inner.strip() or '<' in inner or len(inner.strip()) < 2: return m.group(0)
+        # Form choices (a span right after its input) stay fixed: the email reports the input's value.
+        if re.search(r'<input[^>]*>\s*$', m.string[:m.start()]): return m.group(0)
         if re.search(r'class="[^"]*(num|tag lb|lb__|form-note|opt)', attrs) or 'data-first' in attrs or 'data-form-status' in attrs: return m.group(0)
         n += 1
         return f'<{tag}{attrs} data-k="{page}-{n}">{inner}</{tag}>'
