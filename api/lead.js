@@ -2,9 +2,22 @@
    Lives at /api/lead. Same pattern as the APS site (FormSubmit went offline in October 2026).
    Settings live in Vercel, never in this public repo:
      RESEND_API_KEY  required, a sending only key
-     LEAD_TO         optional, default estimates@galobuilt.com
+     LEAD_TO         optional. Without it, requests go to the email shown on the live contact page
+                     (data-biz="email", which Gerry changes in the editor), falling back to estimates@galobuilt.com
      LEAD_FROM       optional, default below */
-const TO = process.env.LEAD_TO || "estimates@galobuilt.com";
+const DEFAULT_TO = "estimates@galobuilt.com";
+
+// The inbox follows the email Gerry sets in the editor, read from the live contact page.
+async function inbox(host) {
+  if (process.env.LEAD_TO) return process.env.LEAD_TO;
+  try {
+    const proto = /^(localhost|127\.0\.0\.1)/.test(host) ? "http://" : "https://";
+    const r = await fetch(proto + host + "/contact", { signal: AbortSignal.timeout(3000) });
+    const m = /href="mailto:([^"@\s]+@[^"\s]+)" data-biz="email"/.exec(await r.text());
+    if (m) return m[1];
+  } catch (e) { /* fall back */ }
+  return DEFAULT_TO;
+}
 const FROM = process.env.LEAD_FROM || "GALO Built Website <website@solumbra.ai>";
 
 const LABELS = { name: "Name", phone: "Phone", email: "Email", city: "Project location", who: "I am a",
@@ -68,6 +81,9 @@ module.exports = async (req, res) => {
   const html = '<table style="border-collapse:collapse;font-family:Arial,sans-serif;font-size:14px">' + rows + "</table>" + note;
   const text = Object.keys(fields).map((k) => LABELS[k] + ": " + fields[k]).join("\n");
 
+  // Read the inbox from THIS deployment (its own host), never from the visitor's Origin header.
+  const self = String(req.headers["x-forwarded-host"] || req.headers.host || "").split(",")[0].trim();
+  const TO = ALLOWED_HOSTS.test(self) ? await inbox(self) : DEFAULT_TO;
   const r = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { authorization: "Bearer " + process.env.RESEND_API_KEY, "content-type": "application/json", "user-agent": "galobuilt-website" },
